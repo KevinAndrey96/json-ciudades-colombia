@@ -1,15 +1,53 @@
-# 🇨🇴 Departamentos y Ciudades de Colombia (JSON & SQL)
+# 🇨🇴 Departamentos y Ciudades de Colombia (JSON, SQL & Librería npm)
 
-[![Colombia](https://img.shields.io/badge/Country-Colombia-FCD116?style=flat&logo=flags)](https://es.wikipedia.org/wiki/Colombia)
-[![JSON](https://img.shields.io/badge/Data%20Format-JSON-000000?style=flat&logo=json)](colombia.json)
-[![SQL](https://img.shields.io/badge/Database-SQL-4479A1?style=flat&logo=mysql)](colombia.sql)
+[![CI](https://github.com/KevinAndrey96/ciudades-colombia-json/actions/workflows/ci.yml/badge.svg)](https://github.com/KevinAndrey96/ciudades-colombia-json/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/ciudades-colombia.svg?color=CB3837&logo=npm)](https://www.npmjs.com/package/ciudades-colombia)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript&logoColor=white)](lib/index.d.ts)
 [![Municipalities](https://img.shields.io/badge/Municipios-1%2C104-brightgreen?style=flat)]()
 [![Departments](https://img.shields.io/badge/Departamentos-32-blue?style=flat)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Colección estandarizada y actualizada de los **32 departamentos y 1.104 municipios de Colombia** en formatos **JSON** (estructurado y plano), **JSON minificado** para producción web, y scripts **SQL** listos para poblar bases de datos relacionales (MySQL, MariaDB, PostgreSQL).
+Colección estandarizada, tipada y actualizada de los **32 departamentos y 1.104 municipios de Colombia** disponible como **librería npm** para Node.js/TypeScript/React/Vue, archivos **JSON** (estructurado y plano), **JSON minificado** para producción web, y scripts **SQL** listos para bases de datos relacionales (MySQL, MariaDB, PostgreSQL).
 
-Ideal para formularios de registro, menús desplegables dependientes (Departamento ➡️ Ciudad), semillas de bases de datos (*seeders* en Laravel, Django, Rails) y microservicios.
+---
+
+## 📦 Instalación vía npm
+
+```bash
+npm install ciudades-colombia
+# o con yarn / pnpm / bun:
+yarn add ciudades-colombia
+pnpm add ciudades-colombia
+```
+
+### Uso en TypeScript / JavaScript (ESM & CommonJS):
+
+```typescript
+import {
+  getDepartamentos,
+  getMunicipios,
+  buscarMunicipios,
+  getDepartamentoPorMunicipio,
+  departamentos,
+  municipios
+} from 'ciudades-colombia';
+
+// 1. Obtener lista de los 32 departamentos
+const listaDeptos = getDepartamentos();
+console.log(listaDeptos); // ['Amazonas', 'Antioquia', ..., 'Vichada']
+
+// 2. Obtener municipios por nombre o ID (insensible a acentos/mayúsculas)
+const ciudadesAntioquia = getMunicipios('antioquia'); // o getMunicipios(1)
+console.log(ciudadesAntioquia.includes('Medellín')); // true
+
+// 3. Búsqueda insensible a acentos (ej. buscar 'bogota' sin tilde)
+const resultados = buscarMunicipios('bogota');
+console.log(resultados);
+// [{ id: 495, departamento_id: 12, departamento: 'Cundinamarca', ciudad: 'Bogotá' }]
+
+// 4. Mapear de ciudad a departamento
+console.log(getDepartamentoPorMunicipio('Cali')); // 'Valle del Cauca'
+```
 
 ---
 

@@ -1,0 +1,51 @@
+{
+  "name": "ciudades-colombia",
+  "version": "1.0.0",
+  "description": "Dataset y librería JavaScript/TypeScript con los 32 departamentos y 1.104 municipios de Colombia con búsqueda insensible a acentos.",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./colombia.json": "./colombia.json",
+    "./colombia-flat.json": "./colombia-flat.json",
+    "./colombia.min.json": "./colombia.min.json"
+  },
+  "files": [
+    "lib",
+    "colombia.json",
+    "colombia-flat.json",
+    "colombia.min.json",
+    "colombia.sql",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "colombia",
+    "ciudades",
+    "municipios",
+    "departamentos",
+    "dane",
+    "ciudades-colombia",
+    "dataset",
+    "json",
+    "typescript"
+  ],
+  "author": "Kevin Andrey Herrera Silva <kahs_kevin@hotmail.com> (https://github.com/KevinAndrey96)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KevinAndrey96/ciudades-colombia-json.git"
+  },
+  "homepage": "https://github.com/KevinAndrey96/ciudades-colombia-json#readme",
+  "bugs": {
+    "url": "https://github.com/KevinAndrey96/ciudades-colombia-json/issues"
+  }
+}
