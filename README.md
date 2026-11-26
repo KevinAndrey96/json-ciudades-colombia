@@ -1,6 +1,6 @@
 # 🇨🇴 Departamentos y Ciudades de Colombia (JSON, SQL & Librería npm)
 
-[![CI](https://github.com/KevinAndrey96/ciudades-colombia-json/actions/workflows/ci.yml/badge.svg)](https://github.com/KevinAndrey96/ciudades-colombia-json/actions/workflows/ci.yml)
+[![CI](https://github.com/KevinAndrey96/json-ciudades-colombia/actions/workflows/ci.yml/badge.svg)](https://github.com/KevinAndrey96/json-ciudades-colombia/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/ciudades-colombia.svg?color=CB3837&logo=npm)](https://www.npmjs.com/package/ciudades-colombia)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript&logoColor=white)](lib/index.d.ts)
 [![Municipalities](https://img.shields.io/badge/Municipios-1%2C104-brightgreen?style=flat)]()
@@ -55,11 +55,11 @@ console.log(getDepartamentoPorMunicipio('Cali')); // 'Valle del Cauca'
 
 | Archivo | Formato | Descripción | Enlace Raw (CDN) |
 |---|---|---|---|
-| **`colombia.json`** | JSON | Agrupado por departamentos con su lista de municipios | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia.json) |
-| **`colombia.min.json`** | JSON | Versión compacta y minificada (ideal para frontend / CDN) | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia.min.json) |
-| **`colombia-flat.json`** | JSON | Lista plana normalizada (`id`, `departamento_id`, `departamento`, `ciudad`) | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia-flat.json) |
-| **`colombia.sql`** | SQL | Esquema relacional DDL e instrucciones `INSERT` para SQL | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia.sql) |
-| **`cities.json`** | JSON | Archivo original exportado para compatibilidad hacia atrás | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/cities.json) |
+| **`colombia.json`** | JSON | Agrupado por departamentos con su lista de municipios | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia.json) |
+| **`colombia.min.json`** | JSON | Versión compacta y minificada (ideal para frontend / CDN) | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia.min.json) |
+| **`colombia-flat.json`** | JSON | Lista plana normalizada (`id`, `departamento_id`, `departamento`, `ciudad`) | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia-flat.json) |
+| **`colombia.sql`** | SQL | Esquema relacional DDL e instrucciones `INSERT` para SQL | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia.sql) |
+| **`cities.json`** | JSON | Archivo original exportado para compatibilidad hacia atrás | [Descargar Raw](https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/cities.json) |
 
 ---
 
@@ -114,7 +114,7 @@ console.log(getDepartamentoPorMunicipio('Cali')); // 'Valle del Cauca'
 
 ### 1. JavaScript / TypeScript (Fetch directo vía CDN)
 ```javascript
-const URL = 'https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia.min.json';
+const URL = 'https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia.min.json';
 
 async function cargarColombia() {
   const response = await fetch(URL);
@@ -139,7 +139,7 @@ export default function SelectorUbicacion() {
   const [ciudades, setCiudades] = useState([]);
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia.min.json')
+    fetch('https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia.min.json')
       .then(res => res.json())
       .then(json => setData(json));
   }, []);
@@ -176,7 +176,7 @@ export default function SelectorUbicacion() {
 import json
 import urllib.request
 
-url = "https://raw.githubusercontent.com/KevinAndrey96/ciudades-colombia-json/master/colombia-flat.json"
+url = "https://raw.githubusercontent.com/KevinAndrey96/json-ciudades-colombia/master/colombia-flat.json"
 req = urllib.request.urlopen(url)
 ciudades = json.loads(req.read().decode())
 

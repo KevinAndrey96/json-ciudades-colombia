@@ -42,10 +42,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KevinAndrey96/ciudades-colombia-json.git"
+    "url": "https://github.com/KevinAndrey96/json-ciudades-colombia.git"
   },
-  "homepage": "https://github.com/KevinAndrey96/ciudades-colombia-json#readme",
+  "homepage": "https://github.com/KevinAndrey96/json-ciudades-colombia#readme",
   "bugs": {
-    "url": "https://github.com/KevinAndrey96/ciudades-colombia-json/issues"
+    "url": "https://github.com/KevinAndrey96/json-ciudades-colombia/issues"
   }
 }
