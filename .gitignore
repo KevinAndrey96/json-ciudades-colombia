@@ -1,0 +1,13 @@
+# Dependencias y paquetes
+node_modules/
+*.tgz
+
+# Registros
+*.log
+npm-debug.log*
+
+# Sistema operativo e IDEs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
